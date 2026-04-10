@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     "ThinkTrace builds services that help you find the reasonable way to adopt and use AI.",
 };
 
+// Runs before paint to set the `.dark` class from localStorage or system
+// preference, avoiding a flash of the wrong theme on first load.
+const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;var c=document.documentElement.classList;d?c.add('dark'):c.remove('dark');}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,9 +30,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans antialiased">
+        {children}
+      </body>
     </html>
   );
 }
