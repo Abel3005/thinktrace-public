@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
@@ -30,14 +31,7 @@ function SiteHeader() {
     <header className="border-b border-border/60">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
         <a href="/" className="flex items-center gap-2.5">
-          <Image
-            src="/logo-mark.svg"
-            alt=""
-            width={32}
-            height={32}
-            priority
-            aria-hidden
-          />
+          <Logo size={32} priority />
           <span className="text-base font-semibold tracking-tight">
             ThinkTrace
           </span>
@@ -223,13 +217,7 @@ function SiteFooter() {
     <footer className="border-t border-border/60">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-4 px-6 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center">
         <div className="flex items-center gap-2.5">
-          <Image
-            src="/logo-mark.svg"
-            alt=""
-            width={20}
-            height={20}
-            aria-hidden
-          />
+          <Logo size={20} />
           <span>© {new Date().getFullYear()} ThinkTrace</span>
         </div>
         <span>Services to leverage AI capability, responsibly.</span>
