@@ -1,3 +1,26 @@
+export const fundamentals = [
+  {
+    n: "01",
+    title: "AI moves faster than we can follow.",
+    body: "The pace of model, tool, and capability change has outrun the pace any individual or team can absorb.",
+  },
+  {
+    n: "02",
+    title: "Human intelligence is outmatched by AI.",
+    body: "On a growing set of tasks, raw model capability already exceeds what any one of us can do unaided.",
+  },
+  {
+    n: "03",
+    title: "We have a cognitive bias to over-leverage AI.",
+    body: "Because it's faster and often smarter, we quietly hand over more and more of our thinking — usually without noticing.",
+  },
+  {
+    n: "04",
+    title: "AI performance depends on how we leverage it.",
+    body: "The value AI produces is a direct function of which tasks we hand over, how we frame them, and what we keep for ourselves.",
+  },
+] as const;
+
 export const valueProps = [
   {
     title: "Move at AI's pace",
@@ -39,6 +62,7 @@ export const productFeatures = [
 ] as const;
 
 export const navLinks = [
+  { href: "#fundamentals", label: "Why ThinkTrace" },
   { href: "#what", label: "What we do" },
   { href: "#how", label: "How it works" },
   { href: "#product", label: "Product" },

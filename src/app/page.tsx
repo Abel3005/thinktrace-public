@@ -4,6 +4,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
 import {
+  fundamentals,
   navLinks,
   productFeatures,
   steps,
@@ -16,6 +17,7 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
+        <Fundamentals />
         <ValueProps />
         <HowItWorks />
         <Product />
@@ -67,28 +69,88 @@ function Hero() {
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-8 px-6 py-24 sm:py-32">
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
-          AI capability, responsibly leveraged
+          Trace your thinking. Leverage AI on purpose.
         </span>
         <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-          Turn AI from a moving target into{" "}
-          <span className="text-brand-500">a capability you can trust.</span>
+          AI is faster than us.{" "}
+          <span className="text-brand-500">
+            The question is what you hand over to it.
+          </span>
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-          ThinkTrace helps teams adopt AI at the speed it&apos;s evolving —
-          without losing track of the risks. We design the services, controls,
-          and tooling that turn raw model power into outcomes your business can
-          rely on.
+          ThinkTrace is built on a simple premise: AI&apos;s value depends
+          entirely on which tasks we leverage to it — and humans have a
+          cognitive bias to over-leverage without noticing. We help you trace
+          your thinking so the handoff is deliberate, not accidental.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <LinkButton href="#product" size="lg">
-            See our product
+          <LinkButton href="#fundamentals" size="lg">
+            Why ThinkTrace exists
           </LinkButton>
-          <LinkButton href="#how" size="lg" variant="secondary">
-            How it works
+          <LinkButton href="#product" size="lg" variant="secondary">
+            See our product
           </LinkButton>
         </div>
       </div>
     </section>
+  );
+}
+
+function Fundamentals() {
+  return (
+    <Section id="fundamentals">
+      <div className="max-w-3xl">
+        <SectionEyebrow>Our fundamental base</SectionEyebrow>
+        <SectionTitle>
+          Four things we believe{" "}
+          <span className="text-brand-500">
+            about humans, AI, and the gap between them.
+          </span>
+        </SectionTitle>
+        <p className="mt-4 text-base leading-7 text-muted-foreground">
+          Everything ThinkTrace builds starts here. If these aren&apos;t true,
+          we don&apos;t need to exist.
+        </p>
+      </div>
+      <ol className="mt-12 grid gap-6 sm:grid-cols-2">
+        {fundamentals.map((f) => (
+          <li
+            key={f.n}
+            className="relative rounded-xl border border-border bg-card p-7 shadow-sm"
+          >
+            <span className="font-mono text-xs font-medium text-brand-500">
+              {f.n}
+            </span>
+            <h3 className="mt-3 text-xl font-semibold leading-snug text-card-foreground">
+              {f.title}
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              {f.body}
+            </p>
+          </li>
+        ))}
+      </ol>
+      <div className="relative mt-12 overflow-hidden rounded-2xl border border-brand-500/30 bg-brand-500/5 p-8 sm:p-12">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, color-mix(in oklab, var(--brand-400) 14%, transparent), transparent 70%)",
+          }}
+        />
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-brand-500">
+          The conclusion
+        </p>
+        <p className="mt-4 max-w-3xl text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl">
+          So we have to{" "}
+          <span className="text-brand-500">trace our thinking</span> in order
+          to leverage tasks to AI on purpose.
+        </p>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
+          That&apos;s the entire reason ThinkTrace exists.
+        </p>
+      </div>
+    </Section>
   );
 }
 
