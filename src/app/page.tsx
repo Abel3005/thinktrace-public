@@ -1,11 +1,10 @@
-import Image from "next/image";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
 import {
   navLinks,
-  productFeatures,
+  products,
   steps,
   valueProps,
 } from "@/content/landing";
@@ -70,14 +69,14 @@ function Hero() {
           AI capability, responsibly leveraged
         </span>
         <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-          Turn AI from a moving target into{" "}
-          <span className="text-brand-500">a capability you can trust.</span>
+          Trace your thinking.{" "}
+          <span className="text-brand-500">Leverage AI properly.</span>
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-          ThinkTrace helps teams adopt AI at the speed it&apos;s evolving —
-          without losing track of the risks. We design the services, controls,
-          and tooling that turn raw model power into outcomes your business can
-          rely on.
+          AI moves faster than we can follow, and no single person can outpace
+          it alone. ThinkTrace helps you surface the reasoning behind a task,
+          delegate the right parts to AI, and extend what you&apos;re capable
+          of — without losing the trace of how you got there.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
           <LinkButton href="#product" size="lg">
@@ -97,10 +96,11 @@ function ValueProps() {
     <Section id="what" tone="muted">
       <div className="max-w-2xl">
         <SectionEyebrow>What we do</SectionEyebrow>
-        <SectionTitle>Services built for the reality of AI adoption.</SectionTitle>
+        <SectionTitle>Why leveraging tasks to AI is a skill of its own.</SectionTitle>
         <p className="mt-4 text-base leading-7 text-muted-foreground">
-          AI moves faster than any roadmap. ThinkTrace gives you a way to keep
-          up that doesn&apos;t depend on hiring an entire research team.
+          AI performance depends on how well we hand tasks over to it. That
+          handoff is where cognitive bias, guesswork, and wasted effort pile
+          up — and it&apos;s exactly what ThinkTrace is built to fix.
         </p>
       </div>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -130,7 +130,7 @@ function HowItWorks() {
     <Section id="how">
       <div className="max-w-2xl">
         <SectionEyebrow>How it works</SectionEyebrow>
-        <SectionTitle>A traceable path from idea to controlled rollout.</SectionTitle>
+        <SectionTitle>From the thought in your head to a task AI can carry.</SectionTitle>
       </div>
       <ol className="mt-12 grid gap-6 sm:grid-cols-3">
         {steps.map((s) => (
