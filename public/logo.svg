@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" fill="none">
+  <rect x="4" y="4" width="48" height="48" rx="11" fill="#0B1220"/>
+  <path d="M16 22 L40 22 M28 22 L28 44" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="16" cy="22" r="3.5" fill="#60A5FA"/>
+  <circle cx="40" cy="22" r="3.5" fill="#60A5FA"/>
+  <circle cx="28" cy="44" r="3.5" fill="#60A5FA"/>
+  <text x="66" y="37" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="24" font-weight="600" fill="#0B1220" letter-spacing="-0.5">ThinkTrace</text>
+</svg>
