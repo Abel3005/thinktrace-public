@@ -8,7 +8,7 @@ We have to find what is the reasonable way with AI and how to use it.
 
 ## Product
 
-AI-Risk-Manage Service: 
+AI-Risk-Manage Service: Analysis interaction pattern with AI and find risks.
 
 
 ## Environment
