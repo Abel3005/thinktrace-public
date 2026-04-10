@@ -157,37 +157,43 @@ function HowItWorks() {
 function Product() {
   return (
     <Section id="product" tone="muted">
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
-          <SectionEyebrow>Product</SectionEyebrow>
-          <SectionTitle>AI Risk Manage</SectionTitle>
-          <p className="mt-4 text-base leading-7 text-muted-foreground">
-            Our flagship service. Continuously inventories the AI in your
-            organization, scores it against the risks that matter, and surfaces
-            the few things that actually need a human decision — so you can keep
-            shipping without hand-waving the hard parts.
-          </p>
-          <ul className="mt-6 space-y-3 text-sm">
-            {productFeatures.map((f) => (
-              <li key={f} className="flex items-start gap-3">
-                <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-500" />
-                <span className="text-foreground">{f}</span>
-              </li>
-            ))}
-          </ul>
-          <LinkButton href="#contact" className="mt-8">
-            Request a walkthrough
-          </LinkButton>
-        </div>
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <Image
-            src="/placeholder-hero.png"
-            alt="AI Risk Manage dashboard preview"
-            width={1600}
-            height={900}
-            className="h-auto w-full"
-          />
-        </div>
+      <div className="max-w-2xl">
+        <SectionEyebrow>Product</SectionEyebrow>
+        <SectionTitle>Three ways to put the trace to work.</SectionTitle>
+        <p className="mt-4 text-base leading-7 text-muted-foreground">
+          Each ThinkTrace product targets a different part of the handoff to
+          AI — from checking your own skill, to spotting the risks in how you
+          interact with models, to building agents that extend what you can do.
+        </p>
+      </div>
+      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        {products.map((p) => (
+          <div
+            key={p.name}
+            className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm"
+          >
+            <h3 className="text-lg font-semibold text-card-foreground">
+              {p.name}
+            </h3>
+            <p className="mt-2 text-sm font-medium text-brand-500">
+              {p.tagline}
+            </p>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              {p.body}
+            </p>
+            <ul className="mt-5 space-y-2 text-sm">
+              {p.points.map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-500" />
+                  <span className="text-foreground">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div className="mt-10">
+        <LinkButton href="#contact">Request a walkthrough</LinkButton>
       </div>
     </Section>
   );
