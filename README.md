@@ -1,14 +1,37 @@
 # ThinkTrace
 
+Find way to properly use AI with ThinkTrace.
+
 We are making services for your better experiences using AI.
 
-It's too fast to follow AI's development.
+We have to find the proper purpose which cooperate with AI improvement.
 
-We have to find what is the reasonable way with AI and how to use it.
+**Our Fundamental base:**
+
+1. It's too fast to follow AI.
+2. Human's intelligence is lower than AI
+3. But every person have a cognitive bias to leverage our tasks to AI.
+4. AI performance depends on how many we leveaage tasks to AI.
+
+So, we have to trace our think to leverage our task to AI. 
+
+**ThinkTrace exists for it.**
+
 
 ## Product
 
-AI-Risk-Manage Service: Analysis interaction pattern with AI and find risks.
+### AI Skill Checker
+check your AI Skill 
+
+1. Prompt Engineering
+2. knowledge extension based on RAG
+3. Fine tunning
+
+### AI-Risk-Manage Service
+Analysis interaction pattern with AI and find risks.
+
+### AgentQuest
+Make Agent to use AI for ourinteligence to be more extensible.
 
 
 ## Environment
