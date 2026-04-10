@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const valueProps = [
   {
@@ -62,12 +63,15 @@ export default function Home() {
               Product
             </a>
           </nav>
-          <a
-            href="#contact"
-            className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Get in touch
-          </a>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <a
+              href="#contact"
+              className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Get in touch
+            </a>
+          </div>
         </div>
       </header>
 
