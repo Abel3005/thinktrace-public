@@ -1,26 +1,174 @@
 @import "tailwindcss/index.css";
 
+/* Class-based dark mode: toggled via `.dark` on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------
+ * Design tokens (light)
+ * These raw CSS variables are the source of truth. The @theme
+ * block below maps them into Tailwind utilities (bg-background,
+ * text-foreground, bg-brand-500, rounded-lg, etc).
+ * ------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand scale — anchored on the ThinkTrace mark (#0B1220 + #60A5FA) */
+  --brand-50:  #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-800: #1e40af;
+  --brand-900: #1e3a8a;
+  --brand-950: #0b1220;
+
+  /* Semantic surfaces & text */
+  --background:          #ffffff;
+  --foreground:          #0b1220;
+  --muted:               #f1f5f9;
+  --muted-foreground:    #64748b;
+  --card:                #ffffff;
+  --card-foreground:     #0b1220;
+  --popover:             #ffffff;
+  --popover-foreground:  #0b1220;
+  --border:              #e2e8f0;
+  --input:               #e2e8f0;
+  --ring:                #60a5fa;
+
+  --primary:             #0b1220;
+  --primary-foreground:  #f8fafc;
+  --secondary:           #f1f5f9;
+  --secondary-foreground:#0b1220;
+  --accent:              #60a5fa;
+  --accent-foreground:   #0b1220;
+
+  --destructive:            #ef4444;
+  --destructive-foreground: #fef2f2;
+  --success:                #10b981;
+  --success-foreground:     #ecfdf5;
+  --warning:                #f59e0b;
+  --warning-foreground:     #fffbeb;
+
+  /* Radii */
+  --radius: 0.625rem;
 }
 
+/* Dark overrides — same variable names, different values. */
+.dark {
+  --background:          #0b1220;
+  --foreground:          #f8fafc;
+  --muted:               #1e293b;
+  --muted-foreground:    #94a3b8;
+  --card:                #111a2e;
+  --card-foreground:     #f8fafc;
+  --popover:             #111a2e;
+  --popover-foreground:  #f8fafc;
+  --border:              #1e293b;
+  --input:               #1e293b;
+  --ring:                #60a5fa;
+
+  --primary:             #f8fafc;
+  --primary-foreground:  #0b1220;
+  --secondary:           #1e293b;
+  --secondary-foreground:#f8fafc;
+  --accent:              #60a5fa;
+  --accent-foreground:   #0b1220;
+
+  --destructive:            #f87171;
+  --destructive-foreground: #450a0a;
+  --success:                #34d399;
+  --success-foreground:     #022c22;
+  --warning:                #fbbf24;
+  --warning-foreground:     #451a03;
+}
+
+/* ---------------------------------------------------------------
+ * Tailwind theme mapping
+ * `inline` resolves var() at build time so utilities emit
+ * var(--background) rather than the literal color — which is
+ * exactly what lets the .dark class flip everything.
+ * ------------------------------------------------------------- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Fonts (injected by next/font in layout.tsx) */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand color scale → bg-brand-500, text-brand-600, ring-brand-400, ... */
+  --color-brand-50:  var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
+
+  /* Semantic colors */
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-popover:              var(--popover);
+  --color-popover-foreground:   var(--popover-foreground);
+  --color-border:               var(--border);
+  --color-input:                var(--input);
+  --color-ring:                 var(--ring);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-destructive:            var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success:                var(--success);
+  --color-success-foreground:     var(--success-foreground);
+  --color-warning:                var(--warning);
+  --color-warning-foreground:     var(--warning-foreground);
+
+  /* Radii → rounded-sm/md/lg/xl derive from --radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base element styles using the tokens. */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--border);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--accent) 35%, transparent);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
 }
