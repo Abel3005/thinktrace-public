@@ -2,7 +2,7 @@ import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
-import { navLinks, products } from "@/content/landing";
+import { heroOutcomes, navLinks, products } from "@/content/landing";
 
 export default function Home() {
   return (
@@ -59,22 +59,39 @@ function Hero() {
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-8 px-6 py-24 sm:py-32">
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
-          Trace your thinking. Leverage AI with intent.
+          Find the proper way to use AI
         </span>
         <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-          The pace of AI leaves no room to think.{" "}
-          <span className="text-brand-500">We make space for it.</span>
+          A better experience with AI,{" "}
+          <span className="text-brand-500">
+            traced back to the way you think.
+          </span>
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-          ThinkTrace builds products that turn AI from a black box into a set
-          of opportunities your team can act on — recovered hours, extended
-          reach, and decisions you can defend with a trace behind every one.
+          ThinkTrace builds services that help your team cooperate with AI on
+          purpose. We trace the thinking behind every delegation — so the way
+          you use AI keeps improving alongside it.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
           <LinkButton href="#product" size="lg">
-            See our product
+            See our products
+          </LinkButton>
+          <LinkButton href="#contact" size="lg" variant="secondary">
+            Get in touch
           </LinkButton>
         </div>
+        <dl className="mt-4 grid w-full max-w-3xl gap-6 border-t border-border/60 pt-8 sm:grid-cols-3">
+          {heroOutcomes.map((o) => (
+            <div key={o.title}>
+              <dt className="text-sm font-semibold text-foreground">
+                {o.title}
+              </dt>
+              <dd className="mt-1 text-sm leading-6 text-muted-foreground">
+                {o.body}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

@@ -1,3 +1,18 @@
+export const heroOutcomes = [
+  {
+    title: "Recovered hours",
+    body: "Turn work already completed through AI into reports you can show stakeholders.",
+  },
+  {
+    title: "Extended reach",
+    body: "Commission agents that absorb whole categories of work without diluting the thinking behind them.",
+  },
+  {
+    title: "Clearer judgment",
+    body: "Catch the bias in a delegation before it shapes a task you can't undo.",
+  },
+] as const;
+
 export const products = [
   {
     name: "AI-Risk-Manage",
