@@ -20,28 +20,33 @@ So, we have to trace our think to leverage our task to AI.
 
 ## Product
 
-### AI Skill Checker
-check your AI Skill 
-
-1. Prompt Engineering
-2. knowledge extension based on RAG
-3. Fine tunning
-
 ### AI-Risk-Manage Service
 
 **Background**: We can not verify, reproduce and standardize tasks completed via AI.
-**Core value**: Analysis interaction pattern with AI and find risks.
+
+**Core Value**: Analysis interaction pattern with AI and find risks.
+
 **function**:
 
 1. Generate Task Report based on labor hour for work completed through AI
 2. By Analyzing individual AI'utilization pattern, provide guidance on further opportunities for AI-driven optimization.
 3. Monitor activities and outcomes that are inconsistnat with project's intended progress.
 
-
-
 ### AgentQuest
-Make Agent to use AI for ourinteligence to be more extensible.
 
+**Background**: We can effectively extend our inteligence by using AI Agents
+
+**Core Value**: Make and ask Agent to use AI for our inteligence to be more extensible.
+
+**Function**: Undfined
+
+### AI Skill Checker
+
+**Background**: We should check our cognitive bias.
+
+**Core Value**: Check you context using AI
+
+**Function**: Undefind
 
 ## Environment
 - [Next.js](https://nextjs.org) 16.2.4
