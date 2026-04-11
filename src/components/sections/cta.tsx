@@ -12,7 +12,7 @@ export function Cta() {
           Tell us what you&apos;re building. We&apos;ll show you where ThinkTrace
           fits — and where it doesn&apos;t.
         </p>
-        <LinkButton href="mailto:hello@thinktrace.ai" size="lg">
+        <LinkButton href="mailto:contact@thinktrace.net" size="lg">
           hello@thinktrace.ai
         </LinkButton>
       </div>

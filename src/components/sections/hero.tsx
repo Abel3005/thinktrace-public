@@ -28,10 +28,10 @@ export function Hero() {
           you use AI keeps improving alongside it.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <LinkButton href="#product" size="lg">
+          <LinkButton href="#product" size="lg" variant="secondary">
             See our products
           </LinkButton>
-          <LinkButton href="#contact" size="lg" variant="secondary">
+          <LinkButton href="#contact" size="lg">
             Get in touch
           </LinkButton>
         </div>
