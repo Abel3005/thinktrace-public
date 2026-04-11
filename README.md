@@ -29,7 +29,7 @@ check your AI Skill
 
 ### AI-Risk-Manage Service
 
-**Background**: By AI, can not check, reproduce, standarize tasks.
+**Background**: We can not verify, reproduce and standardize tasks completed via AI.
 **Core value**: Analysis interaction pattern with AI and find risks.
 **function**:
 
@@ -57,11 +57,5 @@ run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
