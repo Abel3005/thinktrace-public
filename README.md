@@ -28,7 +28,16 @@ check your AI Skill
 3. Fine tunning
 
 ### AI-Risk-Manage Service
-Analysis interaction pattern with AI and find risks.
+
+**Background**: By AI, can not check, reproduce, standarize tasks.
+**Core value**: Analysis interaction pattern with AI and find risks.
+**function**:
+
+1. Generate Task Report based on labor hour for work completed through AI
+2. By Analyzing individual AI'utilization pattern, provide guidance on further opportunities for AI-driven optimization.
+3. Monitor activities and outcomes that are inconsistnat with project's intended progress.
+
+
 
 ### AgentQuest
 Make Agent to use AI for ourinteligence to be more extensible.
