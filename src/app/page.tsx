@@ -3,12 +3,7 @@ import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
-import {
-  navLinks,
-  productFeatures,
-  steps,
-  valueProps,
-} from "@/content/landing";
+import { heroOutcomes, navLinks, products } from "@/content/landing";
 
 export default function Home() {
   return (
@@ -16,8 +11,6 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <ValueProps />
-        <HowItWorks />
         <Product />
         <Cta />
       </main>
@@ -67,127 +60,132 @@ function Hero() {
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-8 px-6 py-24 sm:py-32">
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
-          AI capability, responsibly leveraged
+          Find the proper way to use AI
         </span>
         <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-          Turn AI from a moving target into{" "}
-          <span className="text-brand-500">a capability you can trust.</span>
+          A better experience with AI,{" "}
+          <span className="text-brand-500">
+            traced back to the way you think.
+          </span>
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-          ThinkTrace helps teams adopt AI at the speed it&apos;s evolving —
-          without losing track of the risks. We design the services, controls,
-          and tooling that turn raw model power into outcomes your business can
-          rely on.
+          ThinkTrace builds services that help your team cooperate with AI on
+          purpose. We trace the thinking behind every delegation — so the way
+          you use AI keeps improving alongside it.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
           <LinkButton href="#product" size="lg">
-            See our product
+            See our products
           </LinkButton>
-          <LinkButton href="#how" size="lg" variant="secondary">
-            How it works
+          <LinkButton href="#contact" size="lg" variant="secondary">
+            Get in touch
           </LinkButton>
         </div>
+        <dl className="mt-4 grid w-full max-w-3xl gap-6 border-t border-border/60 pt-8 sm:grid-cols-3">
+          {heroOutcomes.map((o) => (
+            <div key={o.title}>
+              <dt className="text-sm font-semibold text-foreground">
+                {o.title}
+              </dt>
+              <dd className="mt-1 text-sm leading-6 text-muted-foreground">
+                {o.body}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
-  );
-}
-
-function ValueProps() {
-  return (
-    <Section id="what" tone="muted">
-      <div className="max-w-2xl">
-        <SectionEyebrow>What we do</SectionEyebrow>
-        <SectionTitle>Services built for the reality of AI adoption.</SectionTitle>
-        <p className="mt-4 text-base leading-7 text-muted-foreground">
-          AI moves faster than any roadmap. ThinkTrace gives you a way to keep
-          up that doesn&apos;t depend on hiring an entire research team.
-        </p>
-      </div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {valueProps.map((v) => (
-          <div
-            key={v.title}
-            className="rounded-xl border border-border bg-card p-6 shadow-sm"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
-              <span className="h-2 w-2 rounded-full bg-brand-500" />
-            </div>
-            <h3 className="mt-5 text-lg font-semibold text-card-foreground">
-              {v.title}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              {v.body}
-            </p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function HowItWorks() {
-  return (
-    <Section id="how">
-      <div className="max-w-2xl">
-        <SectionEyebrow>How it works</SectionEyebrow>
-        <SectionTitle>A traceable path from idea to controlled rollout.</SectionTitle>
-      </div>
-      <ol className="mt-12 grid gap-6 sm:grid-cols-3">
-        {steps.map((s) => (
-          <li
-            key={s.n}
-            className="relative rounded-xl border border-border bg-card p-6"
-          >
-            <span className="font-mono text-xs font-medium text-brand-500">
-              {s.n}
-            </span>
-            <h3 className="mt-3 text-lg font-semibold text-card-foreground">
-              {s.title}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              {s.body}
-            </p>
-          </li>
-        ))}
-      </ol>
-    </Section>
   );
 }
 
 function Product() {
   return (
     <Section id="product" tone="muted">
-      <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
-          <SectionEyebrow>Product</SectionEyebrow>
-          <SectionTitle>AI Risk Manage</SectionTitle>
-          <p className="mt-4 text-base leading-7 text-muted-foreground">
-            Our flagship service. Continuously inventories the AI in your
-            organization, scores it against the risks that matter, and surfaces
-            the few things that actually need a human decision — so you can keep
-            shipping without hand-waving the hard parts.
-          </p>
-          <ul className="mt-6 space-y-3 text-sm">
-            {productFeatures.map((f) => (
-              <li key={f} className="flex items-start gap-3">
-                <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-500" />
-                <span className="text-foreground">{f}</span>
-              </li>
-            ))}
-          </ul>
-          <LinkButton href="#contact" className="mt-8">
-            Request a walkthrough
-          </LinkButton>
-        </div>
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <Image
-            src="/placeholder-hero.png"
-            alt="AI Risk Manage dashboard preview"
-            width={1600}
-            height={900}
-            className="h-auto w-full"
-          />
-        </div>
+      <div className="max-w-2xl">
+        <SectionEyebrow>Product</SectionEyebrow>
+        <SectionTitle>
+          Trace the thinking, then leverage AI.
+        </SectionTitle>
+        <p className="mt-4 text-base leading-7 text-muted-foreground">
+          Each product tackles a different part of the problem — the work
+          already flowing through AI, the reach you could extend with agents,
+          and the bias that shapes every delegation in the first place.
+        </p>
+      </div>
+      <div className="mt-12 flex flex-col gap-10">
+        {products.map((p, idx) => (
+          <article
+            key={p.name}
+            className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+          >
+            <div className="grid gap-0 lg:grid-cols-2">
+              <div
+                className={
+                  idx % 2 === 1
+                    ? "relative order-first aspect-[4/3] bg-muted lg:order-last lg:aspect-auto"
+                    : "relative order-first aspect-[4/3] bg-muted lg:aspect-auto"
+                }
+              >
+                <Image
+                  src={p.image.src}
+                  alt={p.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-between gap-8 p-8 lg:p-10">
+                <header className="flex flex-wrap items-center gap-3">
+                  <h3 className="text-2xl font-semibold tracking-tight text-card-foreground">
+                    {p.name}
+                  </h3>
+                  <span
+                    className={
+                      p.status === "available"
+                        ? "rounded-full border border-brand-500/30 bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-500"
+                        : "rounded-full border border-border bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
+                    }
+                  >
+                    {p.status === "available" ? "Available" : "In development"}
+                  </span>
+                </header>
+                <div className="border-l-2 border-brand-500 pl-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
+                    Core value
+                  </p>
+                  <p className="mt-3 text-xl font-medium leading-8 text-foreground sm:text-2xl sm:leading-9">
+                    {p.coreValue}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    What it does
+                  </p>
+                  {p.functions.length > 0 ? (
+                    <ol className="mt-3 space-y-3 text-sm">
+                      {p.functions.map((f, i) => (
+                        <li key={f} className="flex items-start gap-3">
+                          <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-brand-500/10 font-mono text-[11px] font-semibold text-brand-500">
+                            {i + 1}
+                          </span>
+                          <span className="leading-6 text-foreground">{f}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  ) : (
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      Functions are still being shaped. Talk to us if you want
+                      input on where it lands.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="mt-10">
+        <LinkButton href="#contact">Request a walkthrough</LinkButton>
       </div>
     </Section>
   );

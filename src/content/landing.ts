@@ -1,45 +1,69 @@
-export const valueProps = [
+export const heroOutcomes = [
   {
-    title: "Move at AI's pace",
-    body: "Models, tools, and best practices change weekly. ThinkTrace tracks the shifts so your team can adopt what works without chasing every release.",
+    title: "Recovered hours",
+    body: "Turn work already completed through AI into reports you can show stakeholders.",
   },
   {
-    title: "Adopt with guardrails",
-    body: "Capability is only useful when it's safe to ship. We translate emerging AI risks into controls that fit how your teams actually build.",
+    title: "Extended reach",
+    body: "Commission agents that absorb whole categories of work without diluting the thinking behind them.",
   },
   {
-    title: "Prove the value",
-    body: "Every workflow we touch comes with a measurable outcome — time saved, errors prevented, decisions accelerated. No vague AI hype.",
-  },
-] as const;
-
-export const steps = [
-  {
-    n: "01",
-    title: "Map your AI surface",
-    body: "We inventory the models, prompts, agents, and data flows already in use across your org — including the shadow ones.",
-  },
-  {
-    n: "02",
-    title: "Trace the risk",
-    body: "Each surface is scored against the risks that matter to you: privacy, accuracy, cost, compliance, and operational fragility.",
-  },
-  {
-    n: "03",
-    title: "Ship the controls",
-    body: "You get concrete policies, evaluators, and monitors wired into your stack — not a 60-page PDF nobody reads.",
+    title: "Clearer judgment",
+    body: "Catch the bias in a delegation before it shapes a task you can't undo.",
   },
 ] as const;
 
-export const productFeatures = [
-  "Live inventory of models, prompts, and agents",
-  "Risk scoring tuned to your industry and stage",
-  "Controls and evaluators wired into your existing stack",
-  "Audit-ready trace of every change",
-] as const;
+export type Product = {
+  name: string;
+  status: "available" | "in-development";
+  coreValue: string;
+  functions: readonly string[];
+  image: {
+    src: string;
+    alt: string;
+  };
+};
+
+export const products: readonly Product[] = [
+  {
+    name: "AI-Risk-Manage",
+    status: "available",
+    coreValue:
+      "Analyze the interaction patterns between your team and AI, then surface the risks hiding inside them.",
+    functions: [
+      "Generate task reports based on the labor hours saved through AI-completed work.",
+      "Analyze individual utilization patterns and guide people toward further AI-driven optimization.",
+      "Monitor activities and outcomes that drift from the project's intended progress.",
+    ],
+    image: {
+      src: "/placeholder-wide.png",
+      alt: "Preview of the AI-Risk-Manage dashboard showing interaction patterns and risk scores.",
+    },
+  },
+  {
+    name: "AgentQuest",
+    status: "in-development",
+    coreValue:
+      "Build and commission agents that use AI on your behalf, so your intelligence becomes extensible instead of diluted.",
+    functions: [],
+    image: {
+      src: "/placeholder-card.png",
+      alt: "Preview of AgentQuest — a workspace for designing and commissioning AI agents.",
+    },
+  },
+  {
+    name: "AI Skill Checker",
+    status: "in-development",
+    coreValue:
+      "Use AI to check your own context — so you see the bias before it shapes the task you're about to hand off.",
+    functions: [],
+    image: {
+      src: "/placeholder-square.png",
+      alt: "Preview of AI Skill Checker — a context reflection view that surfaces cognitive bias.",
+    },
+  },
+];
 
 export const navLinks = [
-  { href: "#what", label: "What we do" },
-  { href: "#how", label: "How it works" },
   { href: "#product", label: "Product" },
 ] as const;
