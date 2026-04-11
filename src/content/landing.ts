@@ -22,6 +22,7 @@ export type Product = {
     src: string;
     alt: string;
   };
+  hrefservice: string;
 };
 
 export const products: readonly Product[] = [
@@ -39,6 +40,7 @@ export const products: readonly Product[] = [
       src: "/placeholder-wide.png",
       alt: "Preview of the AI-Risk-Manage dashboard showing interaction patterns and risk scores.",
     },
+    hrefservice:"https://risk.thinktrace.net"
   },
   {
     name: "AgentQuest",
@@ -50,6 +52,7 @@ export const products: readonly Product[] = [
       src: "/placeholder-card.png",
       alt: "Preview of AgentQuest — a workspace for designing and commissioning AI agents.",
     },
+    hrefservice: "#"
   },
   {
     name: "AI Skill Checker",
@@ -61,6 +64,7 @@ export const products: readonly Product[] = [
       src: "/placeholder-square.png",
       alt: "Preview of AI Skill Checker — a context reflection view that surfaces cognitive bias.",
     },
+    hrefservice:"#"
   },
 ];
 

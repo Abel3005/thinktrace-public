@@ -34,7 +34,7 @@ export function ProductCard({
   reverse?: boolean;
 }) {
   const indexLabel = String(index + 1).padStart(2, "0");
-  const contactHref = `mailto:hello@thinktrace.ai?subject=${encodeURIComponent(
+  const contactHref = `mailto:contact@thinktrace.net?subject=${encodeURIComponent(
     `${product.name} — ${ctaLabel[product.status]}`,
   )}`;
 
@@ -107,7 +107,7 @@ export function ProductCard({
             )}
           </div>
           <div className="pt-2">
-            <LinkButton href={contactHref} variant="secondary" size="sm">
+            <LinkButton href={product.hrefservice} target="_blank" variant="secondary" size="sm">
               {ctaLabel[product.status]}
               <span aria-hidden>→</span>
             </LinkButton>
