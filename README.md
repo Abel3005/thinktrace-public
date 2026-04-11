@@ -36,7 +36,7 @@ So, we have to trace our think to leverage our task to AI.
 
 **Background**: We can effectively extend our inteligence by using AI Agents
 
-**Core Value**: Make and ask Agent to use AI for our inteligence to be more extensible.
+**Core Value**: Extend your intelligence through agents you design.
 
 **Function**: Undfined
 
@@ -44,7 +44,7 @@ So, we have to trace our think to leverage our task to AI.
 
 **Background**: We should check our cognitive bias.
 
-**Core Value**: Check you context using AI
+**Core Value**: Check your context against your cognitive bias.
 
 **Function**: Undefind
 
@@ -55,12 +55,4 @@ So, we have to trace our think to leverage our task to AI.
 - [ESLint](https://eslint.org/) 9
 - [NPM](https://www.npmjs.com/) 10.8.2
 - [Node.js](https://nodejs.org) 20.20.2
-
-## Getting Started
-
-run the development server:
-
-```bash
-npm run dev
-```
 
