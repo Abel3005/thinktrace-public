@@ -29,7 +29,7 @@ export const products: readonly Product[] = [
     name: "AI-Risk-Manage",
     status: "available",
     coreValue:
-      "Analyze the interaction patterns between your team and AI, then surface the risks hiding inside them.",
+      "Analysis interaction pattern with AI and find risks.",
     functions: [
       "Generate task reports based on the labor hours saved through AI-completed work.",
       "Analyze individual utilization patterns and guide people toward further AI-driven optimization.",
@@ -44,7 +44,7 @@ export const products: readonly Product[] = [
     name: "AgentQuest",
     status: "in-development",
     coreValue:
-      "Build and commission agents that use AI on your behalf, so your intelligence becomes extensible instead of diluted.",
+      "Extend your intelligence through agents you design.",
     functions: [],
     image: {
       src: "/placeholder-card.png",
@@ -55,7 +55,7 @@ export const products: readonly Product[] = [
     name: "AI Skill Checker",
     status: "in-development",
     coreValue:
-      "Use AI to check your own context — so you see the bias before it shapes the task you're about to hand off.",
+      "Check your context against your cognitive bias.",
     functions: [],
     image: {
       src: "/placeholder-square.png",
