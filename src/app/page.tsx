@@ -73,10 +73,9 @@ function Hero() {
           <span className="text-brand-500">We make space for it.</span>
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-          Every hand-off to AI carries a bias you can&apos;t see in the moment.
-          ThinkTrace traces the thinking behind how your team delegates — so
-          you leverage AI deliberately, with every step reproducible,
-          measurable, and yours.
+          ThinkTrace builds products that turn AI from a black box into a set
+          of opportunities your team can act on — recovered hours, extended
+          reach, and decisions you can defend with a trace behind every one.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
           <LinkButton href="#product" size="lg">
@@ -96,10 +95,11 @@ function ValueProps() {
     <Section id="what" tone="muted">
       <div className="max-w-2xl">
         <SectionEyebrow>What we do</SectionEyebrow>
-        <SectionTitle>Services built for the reality of AI adoption.</SectionTitle>
+        <SectionTitle>Products that turn AI into opportunities you can act on.</SectionTitle>
         <p className="mt-4 text-base leading-7 text-muted-foreground">
-          AI moves faster than any roadmap. ThinkTrace gives you a way to keep
-          up that doesn&apos;t depend on hiring an entire research team.
+          Every ThinkTrace product is built around one question: what could
+          your team do next if AI were a lever you could pull on purpose? Here
+          is what each one unlocks.
         </p>
       </div>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

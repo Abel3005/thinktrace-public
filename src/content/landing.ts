@@ -1,15 +1,15 @@
 export const valueProps = [
   {
-    title: "Keep pace without chasing",
-    body: "AI evolves faster than any roadmap. ThinkTrace surfaces the shifts that matter so your team adopts what works instead of reacting to every release.",
+    title: "Turn AI usage into recovered hours",
+    body: "We trace the work your team is already completing through AI and convert it into task reports you can show stakeholders — proving the time saved instead of guessing at it.",
   },
   {
-    title: "See your own bias",
-    body: "Every delegation to AI carries a blind spot. We make the reasoning behind each hand-off visible, so you leverage AI deliberately — not by default.",
+    title: "Extend what your team can take on",
+    body: "We help you design and commission agents that absorb whole categories of work — so the same headcount can reach further without diluting the quality of the thinking behind it.",
   },
   {
-    title: "Leverage, measured",
-    body: "The value of AI scales with how well you delegate. We trace the thinking behind each workflow and turn it into outcomes you can prove.",
+    title: "See the blind spot before it costs you",
+    body: "We reflect your context back at you so you can catch the bias in a delegation before it becomes a failed project, a wrong call, or a number you can't explain.",
   },
 ] as const;
 
