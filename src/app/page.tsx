@@ -2,12 +2,7 @@ import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
-import {
-  navLinks,
-  products,
-  steps,
-  valueProps,
-} from "@/content/landing";
+import { navLinks, products } from "@/content/landing";
 
 export default function Home() {
   return (
@@ -15,8 +10,6 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <ValueProps />
-        <HowItWorks />
         <Product />
         <Cta />
       </main>
@@ -81,75 +74,9 @@ function Hero() {
           <LinkButton href="#product" size="lg">
             See our product
           </LinkButton>
-          <LinkButton href="#how" size="lg" variant="secondary">
-            How it works
-          </LinkButton>
         </div>
       </div>
     </section>
-  );
-}
-
-function ValueProps() {
-  return (
-    <Section id="what" tone="muted">
-      <div className="max-w-2xl">
-        <SectionEyebrow>What we do</SectionEyebrow>
-        <SectionTitle>Products that turn AI into opportunities you can act on.</SectionTitle>
-        <p className="mt-4 text-base leading-7 text-muted-foreground">
-          Every ThinkTrace product is built around one question: what could
-          your team do next if AI were a lever you could pull on purpose? Here
-          is what each one unlocks.
-        </p>
-      </div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {valueProps.map((v) => (
-          <div
-            key={v.title}
-            className="rounded-xl border border-border bg-card p-6 shadow-sm"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
-              <span className="h-2 w-2 rounded-full bg-brand-500" />
-            </div>
-            <h3 className="mt-5 text-lg font-semibold text-card-foreground">
-              {v.title}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              {v.body}
-            </p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function HowItWorks() {
-  return (
-    <Section id="how">
-      <div className="max-w-2xl">
-        <SectionEyebrow>How it works</SectionEyebrow>
-        <SectionTitle>A traceable path from idea to controlled rollout.</SectionTitle>
-      </div>
-      <ol className="mt-12 grid gap-6 sm:grid-cols-3">
-        {steps.map((s) => (
-          <li
-            key={s.n}
-            className="relative rounded-xl border border-border bg-card p-6"
-          >
-            <span className="font-mono text-xs font-medium text-brand-500">
-              {s.n}
-            </span>
-            <h3 className="mt-3 text-lg font-semibold text-card-foreground">
-              {s.title}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              {s.body}
-            </p>
-          </li>
-        ))}
-      </ol>
-    </Section>
   );
 }
 
