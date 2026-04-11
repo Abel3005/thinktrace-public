@@ -13,31 +13,56 @@ export const heroOutcomes = [
   },
 ] as const;
 
-export const products = [
+export type Product = {
+  name: string;
+  status: "available" | "in-development";
+  coreValue: string;
+  functions: readonly string[];
+  image: {
+    src: string;
+    alt: string;
+  };
+};
+
+export const products: readonly Product[] = [
   {
     name: "AI-Risk-Manage",
-    tagline: "Analyze interaction patterns with AI and find the risks.",
-    body: "We can't verify, reproduce, or standardize the work completed through AI. AI-Risk-Manage turns raw AI usage into task reports, optimization guidance, and alerts for activity that drifts from your project's intent.",
-    features: [
-      "Task reports based on labor hours saved through AI",
-      "Per-person utilization patterns with optimization guidance",
-      "Monitors for outcomes inconsistent with project intent",
-      "Audit-ready trace of every AI-driven change",
+    status: "available",
+    coreValue:
+      "Analyze the interaction patterns between your team and AI, then surface the risks hiding inside them.",
+    functions: [
+      "Generate task reports based on the labor hours saved through AI-completed work.",
+      "Analyze individual utilization patterns and guide people toward further AI-driven optimization.",
+      "Monitor activities and outcomes that drift from the project's intended progress.",
     ],
+    image: {
+      src: "/placeholder-wide.png",
+      alt: "Preview of the AI-Risk-Manage dashboard showing interaction patterns and risk scores.",
+    },
   },
   {
     name: "AgentQuest",
-    tagline: "Extend your intelligence through agents you design.",
-    body: "Agents are the most effective way to extend what a team can reason about. AgentQuest is how you build and commission them — shaping agents that make your intelligence more extensible, not more diluted.",
-    features: ["Coming soon"],
+    status: "in-development",
+    coreValue:
+      "Build and commission agents that use AI on your behalf, so your intelligence becomes extensible instead of diluted.",
+    functions: [],
+    image: {
+      src: "/placeholder-card.png",
+      alt: "Preview of AgentQuest — a workspace for designing and commissioning AI agents.",
+    },
   },
   {
     name: "AI Skill Checker",
-    tagline: "Check your context against your cognitive bias.",
-    body: "Every delegation starts from a biased read of the situation. AI Skill Checker uses AI to reflect your context back at you, so you can see the bias before it shapes the task.",
-    features: ["Coming soon"],
+    status: "in-development",
+    coreValue:
+      "Use AI to check your own context — so you see the bias before it shapes the task you're about to hand off.",
+    functions: [],
+    image: {
+      src: "/placeholder-square.png",
+      alt: "Preview of AI Skill Checker — a context reflection view that surfaces cognitive bias.",
+    },
   },
-] as const;
+];
 
 export const navLinks = [
   { href: "#product", label: "Product" },
