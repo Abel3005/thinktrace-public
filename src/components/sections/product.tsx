@@ -1,5 +1,4 @@
 import { ProductCard } from "@/components/product-card";
-import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
 import { products } from "@/content/landing";
 
@@ -17,11 +16,13 @@ export function Product() {
       </div>
       <div className="mt-12 flex flex-col gap-10">
         {products.map((p, idx) => (
-          <ProductCard key={p.name} product={p} reverse={idx % 2 === 1} />
+          <ProductCard
+            key={p.name}
+            product={p}
+            index={idx}
+            reverse={idx % 2 === 1}
+          />
         ))}
-      </div>
-      <div className="mt-10">
-        <LinkButton href="#contact">Request a walkthrough</LinkButton>
       </div>
     </Section>
   );
