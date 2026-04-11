@@ -1,11 +1,10 @@
-import Image from "next/image";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkButton } from "@/components/ui/button";
 import { Section, SectionEyebrow, SectionTitle } from "@/components/ui/section";
 import {
   navLinks,
-  productFeatures,
+  products,
   steps,
   valueProps,
 } from "@/content/landing";
